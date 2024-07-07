@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbandingan Operator == dan ===</title>
+    <script>
+        function compareValues() {
+            var a = 5;
+            var b = '5';
+
+            var resultLoose = (a == b);
+            var resultStrict = (a === b);
+
+            document.getElementById('looseEqualityResult').innerText = resultLoose;
+            document.getElementById('strictEqualityResult').innerText = resultStrict;
+        }
+
+        window.onload = compareValues;
+    </script>
+</head>
+
+<body>
+    <h1>Perbandingan Operator == dan ===</h1>
+
+    <h2>Loose Equality (==)</h2>
+    <p>Contoh:</p>
+    <pre>
+        var a = 5;
+        var b = '5';
+
+        if (a == b) {
+        console.log("a sama dengan b (menggunakan ==");
+        } else {
+        console.log("a tidak sama dengan b (menggunakan ==");
+        }
+    </pre>
+    <p>Hasil:</p>
+    <p>a == b: <span id="looseEqualityResult"></span></p>
+
+    <h2>Strict Equality (===)</h2>
+    <p>Contoh:</p>
+    <pre>
+        var a = 5;
+        var b = '5';
+
+        if (a === b) {
+        console.log("a sama dengan b (menggunakan ===");
+        } else {
+        console.log("a tidak sama dengan b (menggunakan ===");
+        }
+    </pre>
+    <p>Hasil:</p>
+    <p>a === b: <span id="strictEqualityResult"></span></p>
+</body>
+
+</html>

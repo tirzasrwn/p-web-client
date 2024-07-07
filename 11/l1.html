@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+    <script>
+        function validateForm() {
+            var form = document.forms["registrationForm"];
+            var fields = ["name", "address", "email", "phone", "gender"];
+            var valid = true;
+
+            fields.forEach(function (field) {
+                var value = form[field].value;
+                if (value == "") {
+                    alert(
+                        field.charAt(0).toUpperCase() +
+                        field.slice(1) +
+                        " must be filled out",
+                    );
+                    valid = false;
+                }
+            });
+
+            return valid;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Form Pendaftaran Mahasiswa Baru</h2>
+    <form name="registrationForm" onsubmit="return validateForm()" method="post">
+        <label for="name">Nama:</label><br />
+        <input type="text" id="name" name="name" /><br /><br />
+
+        <label for="address">Alamat:</label><br />
+        <input type="text" id="address" name="address" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br /><br />
+
+        <label for="phone">No Telepon:</label><br />
+        <input type="tel" id="phone" name="phone" /><br /><br />
+
+        <label for="gender">Jenis Kelamin:</label><br />
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Laki-laki</label><br />
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Perempuan</label><br /><br />
+
+        <input type="submit" value="Daftar" />
+    </form>
+</body>
+
+</html>
